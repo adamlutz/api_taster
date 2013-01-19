@@ -116,11 +116,12 @@ jQuery(function($) {
     ApiTaster.disableSubmitButton();
     ApiTaster.disableUrlParams();
 
+    var submit_type = $("#submit-type").val();
     window.ajax = $.ajax({
       url: ApiTaster.getSubmitUrl($form),
       type: $form.attr('method'),
       data: $form.serialize(),
-      dataType: 'xml'
+      dataType: submit_type
     }).complete(onComplete);
 
     ApiTaster.lastRequest = {};
