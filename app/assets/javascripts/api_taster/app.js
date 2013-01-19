@@ -117,6 +117,7 @@ jQuery(function($) {
     ApiTaster.disableUrlParams();
 
     var submit_type = $("#submit-type").val();
+    
     window.ajax = $.ajax({
       url: ApiTaster.getSubmitUrl($form),
       type: $form.attr('method'),
