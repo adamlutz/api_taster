@@ -112,6 +112,10 @@ APIs evolve - especially during the development stage. To keep `ApiTaster.routes
 
 ![](http://i.imgur.com/qK7g5.png)
 
+## Changes by gajananbhat
+
+Added Drop Down to select REST call to be submiited as JSON or HTML.
+
 ## License
 
 This gem is released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
