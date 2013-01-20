@@ -116,6 +116,20 @@ APIs evolve - especially during the development stage. To keep `ApiTaster.routes
 
 Added Drop Down to select REST call to be submiited as JSON or HTML.
 
+Added Drop down as a parameter to be displayed in the Form.
+
+E.g.
+
+```ruby
+desc 'Get a __list__ of users based on type.'
+get '/users',
+{
+  :type => ['admin','supervisors']
+}
+```
+
+This will show a dropdown in the form with the array elements as select values.
+
 ## License
 
 This gem is released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
