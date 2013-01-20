@@ -133,6 +133,7 @@ jQuery(function($) {
     $form = $(e.target);
     ApiTaster.disableSubmitButton();
     ApiTaster.disableUrlParams();
+    $("#req-json").val('');
 
     var submit_type = $("#submit-type").val();
     
