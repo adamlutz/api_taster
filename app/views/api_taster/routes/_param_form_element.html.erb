@@ -3,6 +3,8 @@
   <div class="controls">
     <% if value === :file %>
         <input type="file" name="<%= label %>" ></input>
+    <% elsif type === "select" %>    
+      <%= select_tag label, options_for_select(value) %>        
     <% else %>
         <input type="text" name="<%= label %>" value="<%= value.to_s %>"></input>
     <% end %>
