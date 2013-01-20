@@ -37,7 +37,7 @@
       <% if param[:url_params].present? %>
         <fieldset ref="url-params">
           <% param[:url_params].each do |label, value| %>
-            <%= render 'param_form_element', :label => "[api_taster_url_params]#{label}", :value => value, :label_text => label %>
+            <%= render 'param_form_element', :label => "[api_taster_url_params]#{label}", :value => value, :label_text => label, :type => ''%>
           <% end %>
         </fieldset>
       <% end %>
