@@ -33,6 +33,11 @@ var ApiTaster = {
 
     timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
     $tab.find('.time td.value').text(timeTaken + " ms");
+
+    if ($tab == 'json')
+    {
+      $tab.find('.body td.value').text(JSON.stringify(JSON.parse(xhr.responseText), null, 2));
+    }
   },
 
   getSubmitUrl: function($form) {
@@ -56,7 +61,7 @@ var ApiTaster = {
 
     return baseUrl;
   },
-  
+
   // Added by gajanan
   serializeForm: function()
   {
@@ -73,7 +78,7 @@ var ApiTaster = {
           }
       });
       return o;
-  }  
+  }
 
 };
 
@@ -136,7 +141,7 @@ jQuery(function($) {
     $("#req-json").val('');
 
     var submit_type = $("#submit-type").val();
-    
+
     window.ajax = $.ajax({
       url: ApiTaster.getSubmitUrl($form),
       type: $form.attr('method'),
@@ -160,7 +165,7 @@ jQuery(function($) {
     }
 
     ApiTaster.fillInInfoTab(
-      $("#show-api-response-div").showNavTab("info"),
+      $("#show-api-response-div").showNavTab("json"),
       xhr
     );
 
@@ -172,7 +177,7 @@ jQuery(function($) {
         break;
     }
 
-    $("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
+    //$("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
 
     $("#req-json").val(JSON.stringify(ApiTaster.serializeForm()));
 
