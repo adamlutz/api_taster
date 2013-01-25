@@ -25,7 +25,7 @@
       <% else %>
         <ul class="nav nav-tabs">
           <li class="nav-label">Request</li>
-            <li class="active"><a href="#" id="url-params">Data</a></li>
+            <li class="active"><a href="#" id="url-params">Request Data</a></li>
         </ul>
       <% end %>
 
@@ -38,8 +38,7 @@
       </fieldset>
 
 
-
-      <fieldset ref="form-actions">
+      <div class="form-actions">
         Submit Type:
         <select id="submit-type" name="submit-type">
           <option value="json">JSON</option>
@@ -48,9 +47,8 @@
         </select>
 
         <input id="submit-api" type="submit" class="btn btn-primary pull-right"></input>&nbsp;&nbsp;
-        JSON Request: <textarea readonly rows="4" cols="300" id="req-json" name="req-json" value=""></textarea>
-
-      </fieldset>
+      </div><br>
+      JSON Request: <textarea readonly rows="4" cols="300" id="req-json" name="req-json" value=""></textarea>
 
     <% end %>
   <% end %>
