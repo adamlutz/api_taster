@@ -29,16 +29,16 @@ var ApiTaster = {
 
 
   fillInInfoTab: function($tab, xhr) {
-    $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
-    $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
+    // $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
+    // $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
 
-    timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
-    $tab.find('.time td.value').text(timeTaken + " ms");
+    // timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
+    // $tab.find('.time td.value').text(timeTaken + " ms");
 
-    if (ApiTaster.detectContentType(xhr) === 'json')
-    {
-      $tab.find('.result td.value').text(JSON.stringify(JSON.parse(xhr.responseText), null, 2));
-    }
+    // if (ApiTaster.detectContentType(xhr) === 'json')
+    // {
+    //   $tab.find('.result td.value').text(JSON.stringify(JSON.parse(xhr.responseText), null, 2));
+    // }
   },
 
   // fillInInfoTab: function($tab, xhr) {
@@ -173,10 +173,23 @@ jQuery(function($) {
       $("#show-api-response-div").slideDown(100);
     }
 
-    ApiTaster.fillInInfoTab(
-      $("#show-api-response-div").showNavTab("json"),
-      xhr
-    );
+    // ApiTaster.fillInInfoTab(
+    //   $("#show-api-response-div").showNavTab("json"),
+    //   xhr
+    // );
+    // $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
+    // $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
+
+    // timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
+    // $tab.find('.time td.value').text(timeTaken + " ms");
+
+     $("#show-api-response-div").showNavTab("json").text(
+
+          xhr.status + " " + xhr.statusText + "\r" +
+          xhr.getAllResponseHeaders() + "\r" +
+          JSON.stringify(JSON.parse(xhr.responseText), null, 2)
+
+        );
 
     // switch (ApiTaster.detectContentType(xhr)) {
     //   case "json":
