@@ -183,10 +183,10 @@ jQuery(function($) {
     // timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
     // $tab.find('.time td.value').text(timeTaken + " ms");
 
-     $("#show-api-response-div").showNavTab("json").html(
+     $("#show-api-response-div").showNavTab("json").text(
 
-          "<p class='text-success'>" + xhr.status + " " + xhr.statusText + "\r" + "\r" +
-          xhr.getAllResponseHeaders() + "</p>\r" +
+          xhr.status + " " + xhr.statusText + "\r" + "\r" +
+          xhr.getAllResponseHeaders() + "\r" +
           JSON.stringify(JSON.parse(xhr.responseText), null, 2)
 
         );
