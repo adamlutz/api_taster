@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :members
+
   mount ApiTaster::Engine => "/api_taster"
 
   get 'home' => 'application#home', :as => :home
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
   resources :users, :except => [:new, :edit] do
     resources :comments, :only => [:new, :edit]
   end
+
+  root :to => "api_taster/routes#index"
+   #root :to => "#/api_taster"
 end
 
 ApiTaster.routes do

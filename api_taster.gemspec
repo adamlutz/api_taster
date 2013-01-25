@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap-sass', '~> 2.1'
   s.add_dependency 'redcarpet'
   s.add_dependency 'remotipart', '~> 1.0'
+  s.add_dependency 'pg'
+  s.add_dependency 'devise'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'simplecov'
