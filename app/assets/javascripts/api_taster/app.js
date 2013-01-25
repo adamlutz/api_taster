@@ -42,7 +42,7 @@ var ApiTaster = {
 
   getSubmitUrl: function($form) {
     var baseUrl = $form.attr('action');
-    var matches = baseUrl.match(/\:[^\/]+/g)
+    var matches = baseUrl.match(/\:[^\/]+/g);
 
     if (matches) {
       for(var a = 0; a < matches.length; a++) {
