@@ -119,7 +119,7 @@ $.fn.extend({
   },
 
   displayOnlySelectedParamsFieldset: function() {
-    $("fieldset", this).hide();
+    //$("fieldset", this).hide();
     $("fieldset[ref=" + $("ul.nav-tabs li.active a").attr("id") + "]", this).show();
   }
 
@@ -129,8 +129,8 @@ jQuery(function($) {
   $("#list-api-div a").click(function(e) {
     e.preventDefault();
 
-    $(this).parent().siblings().removeClass("active");
-    $(this).parent().addClass("active");
+    // $(this).parent().siblings().removeClass("active");
+    // $(this).parent().addClass("active");
 
     $("#show-api-div .div-container").load(this.href, function() {
       prettyPrint();
