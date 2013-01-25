@@ -41,13 +41,13 @@ var ApiTaster = {
     }
   },
 
-  fillInInfoTab: function($tab, xhr) {
-    $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
-    $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
+  // fillInInfoTab: function($tab, xhr) {
+  //   $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
+  //   $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
 
-    timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
-    $tab.find('.time td.value').text(timeTaken + " ms");
-  },
+  //   timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
+  //   $tab.find('.time td.value').text(timeTaken + " ms");
+  // },
 
   getSubmitUrl: function($form) {
     var baseUrl = $form.attr('action');
