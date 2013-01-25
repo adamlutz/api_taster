@@ -185,7 +185,7 @@ jQuery(function($) {
 
      $("#show-api-response-div").showNavTab("json").text(
 
-          xhr.status + " " + xhr.statusText + "\r" +
+          xhr.status + " " + xhr.statusText + "\r" + "\r" +
           xhr.getAllResponseHeaders() + "\r" +
           JSON.stringify(JSON.parse(xhr.responseText), null, 2)
 
