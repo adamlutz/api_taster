@@ -37,7 +37,7 @@ var ApiTaster = {
 
     if (ApiTaster.detectContentType(xhr) === 'json')
     {
-      $tab.find('.body td.value').text(JSON.stringify(JSON.parse(xhr.responseText), null, 2));
+      $tab.find('.result td.value').text(JSON.stringify(JSON.parse(xhr.responseText), null, 2));
     }
   },
 
@@ -186,9 +186,9 @@ jQuery(function($) {
     //     break;
     // }
 
-    $("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
+    //$("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
 
-    $("#req-json").val(JSON.stringify(ApiTaster.serializeForm()));
+    //$("#req-json").val(JSON.stringify(ApiTaster.serializeForm()));
 
     prettyPrint();
   }
