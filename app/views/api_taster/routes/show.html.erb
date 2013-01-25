@@ -34,6 +34,9 @@
         <% param[:url_params].each do |label, value| %>
           <%= render 'param_form_element', :label => "[api_taster_url_params]#{label}", :value => value, :label_text => label, :type => ''%>
         <% end %>
+      </fieldset>
+
+      <fieldset ref="post-params">
         <%= ApiTaster::FormBuilder.new(param[:post_params]).html.html_safe %>
       </fieldset>
 
