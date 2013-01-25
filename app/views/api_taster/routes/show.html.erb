@@ -25,28 +25,18 @@
       <% else %>
         <ul class="nav nav-tabs">
           <li class="nav-label">Request</li>
-          <% if param[:url_params].present? %>
-            <li<% unless param[:post_params].present? %> class="active"<% end %>><a href="#" id="url-params">URL</a></li>
-          <% end %>
-          <% if param[:post_params].present? %>
-            <li class="active"><a href="#" id="post-params">POST</a></li>
-          <% end %>
+            <li class="active"><a href="#" id="url-params">Request Data</a></li>
         </ul>
       <% end %>
 
-      <% if param[:url_params].present? %>
+
         <fieldset ref="url-params">
           <% param[:url_params].each do |label, value| %>
             <%= render 'param_form_element', :label => "[api_taster_url_params]#{label}", :value => value, :label_text => label, :type => ''%>
           <% end %>
-        </fieldset>
-      <% end %>
-
-      <% if param[:post_params].present? %>
-        <fieldset ref="post-params">
           <%= ApiTaster::FormBuilder.new(param[:post_params]).html.html_safe %>
         </fieldset>
-      <% end %>
+
 
       <div class="form-actions">
         Submit Type:
