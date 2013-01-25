@@ -201,7 +201,7 @@ jQuery(function($) {
 
     //$("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
 
-    //$("#req-json").val(JSON.stringify(ApiTaster.serializeForm()));
+    $("#req-json").val(JSON.stringify(ApiTaster.serializeForm()));
 
     prettyPrint();
   }
