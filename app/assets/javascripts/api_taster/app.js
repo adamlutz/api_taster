@@ -27,6 +27,7 @@ var ApiTaster = {
     return detectedContentType;
   },
 
+
   fillInInfoTab: function($tab, xhr) {
     $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
     $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
@@ -40,9 +41,17 @@ var ApiTaster = {
     }
   },
 
+  fillInInfoTab: function($tab, xhr) {
+    $tab.find('.status td.value').text(xhr.status + " " + xhr.statusText);
+    $tab.find('.headers td.value').text(xhr.getAllResponseHeaders());
+
+    timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
+    $tab.find('.time td.value').text(timeTaken + " ms");
+  },
+
   getSubmitUrl: function($form) {
     var baseUrl = $form.attr('action');
-    var matches = baseUrl.match(/\:[^\/]+/g);
+    var matches = baseUrl.match(/\:[^\/]+/g)
 
     if (matches) {
       for(var a = 0; a < matches.length; a++) {
@@ -169,15 +178,15 @@ jQuery(function($) {
       xhr
     );
 
-    switch (ApiTaster.detectContentType(xhr)) {
-      case "json":
-        $("#show-api-response-div").showNavTab("json").text(
-          JSON.stringify(JSON.parse(xhr.responseText), null, 2)
-        );
-        break;
-    }
+    // switch (ApiTaster.detectContentType(xhr)) {
+    //   case "json":
+    //     $("#show-api-response-div").showNavTab("json").text(
+    //       JSON.stringify(JSON.parse(xhr.responseText), null, 2)
+    //     );
+    //     break;
+    // }
 
-    //$("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
+    $("#show-api-response-div pre[ref=response-raw]").text(xhr.responseText);
 
     $("#req-json").val(JSON.stringify(ApiTaster.serializeForm()));
 
