@@ -25,20 +25,21 @@
       <% else %>
         <ul class="nav nav-tabs">
           <li class="nav-label">Request</li>
-            <li class="active"><a href="#" id="url-params">Request Data</a></li>
+            <li class="active"><a href="#" id="url-params">Data</a></li>
         </ul>
       <% end %>
 
 
-        <fieldset ref="url-params">
-          <% param[:url_params].each do |label, value| %>
-            <%= render 'param_form_element', :label => "[api_taster_url_params]#{label}", :value => value, :label_text => label, :type => ''%>
-          <% end %>
-          <%= ApiTaster::FormBuilder.new(param[:post_params]).html.html_safe %>
-        </fieldset>
+      <fieldset ref="url-params">
+        <% param[:url_params].each do |label, value| %>
+          <%= render 'param_form_element', :label => "[api_taster_url_params]#{label}", :value => value, :label_text => label, :type => ''%>
+        <% end %>
+        <%= ApiTaster::FormBuilder.new(param[:post_params]).html.html_safe %>
+      </fieldset>
 
 
-      <div class="form-actions">
+
+      <fieldset ref="form-actions">
         Submit Type:
         <select id="submit-type" name="submit-type">
           <option value="json">JSON</option>
@@ -47,8 +48,9 @@
         </select>
 
         <input id="submit-api" type="submit" class="btn btn-primary pull-right"></input>&nbsp;&nbsp;
-      </div><br>
-      JSON Request: <textarea readonly rows="4" cols="300" id="req-json" name="req-json" value=""></textarea>
+        JSON Request: <textarea readonly rows="4" cols="300" id="req-json" name="req-json" value=""></textarea>
+
+      </fieldset>
 
     <% end %>
   <% end %>
