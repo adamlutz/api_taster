@@ -34,7 +34,7 @@ var ApiTaster = {
     timeTaken = ApiTaster.lastRequest.endTime - ApiTaster.lastRequest.startTime
     $tab.find('.time td.value').text(timeTaken + " ms");
 
-    if ($tab == 'json')
+    if (ApiTaster.detectContentType(xhr) === 'json')
     {
       $tab.find('.body td.value').text(JSON.stringify(JSON.parse(xhr.responseText), null, 2));
     }
