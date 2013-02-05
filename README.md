@@ -4,6 +4,15 @@ A quick and easy way to visually test your Rails application's API.
 
 ![](http://i.imgur.com/8Dnto.png)
 
+
+## Forked changes
+
+- Removed restriction around ActionDispatch::Routing::Mapper::Constraints to allow Devise routes to appear.
+- Removed dependency on latest jquery version and force 1.8 because of references to $.live()
+- Simplified user interface to focus only on json testing.
+
+# Original documentation:
+
 ## Why?
 
 There are already many awesome API clients (such as [Postman](https://chrome.google.com/webstore/detail/fdmmgilgnpjigdojojpjoooidkmcomcm)), so why reinvent the wheel?
