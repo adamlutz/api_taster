@@ -12,23 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.iframe-transport
 //= require jquery.remotipart
-//= require bootstrap-transition
-//= require bootstrap-affix
-//= require bootstrap-alert
-//= require bootstrap-button
-//= require bootstrap-carousel
-//= require bootstrap-collapse
-//= require bootstrap-dropdown
-//= require bootstrap-modal
-//= require bootstrap-scrollspy
-//= require bootstrap-tab
-//= require bootstrap-tooltip
-//= require bootstrap-popover
-//= require bootstrap-typeahead
 //= require bootstrap
-//= require api_taster/01-prettify
-//= require api_taster/app
-//= require api_taster/application
-//= require_self
+//= require_tree .
